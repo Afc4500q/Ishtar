@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المنتجات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="store-name">Ishtar</div>
+  <div class="balance-icon" onclick="window.location.href='balance.html'">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/bank.png" alt="رصيد" />
+  </div>
+</div>
+
+  <div class="products-container">
+    <h1>منتجاتنا</h1>
+
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeOrderModal()">&times;</span>
+    <h2>تفاصيل الطلب</h2>
+    <label for="clientName">اسم العميل الثلاثي:</label>
+    <input type="text" id="clientName" required>
+    
+    <label for="clientPhone">رقم الهاتف:</label>
+    <input type="tel" id="clientPhone" required>
+    
+    <label for="clientProvince">المحافظة:</label>
+    <input type="text" id="clientProvince" required>
+    
+    <label for="clientCity">المدينة:</label>
+    <input type="text" id="clientCity" required>
+    
+    <label for="clientArea">الحي:</label>
+    <input type="text" id="clientArea" required>
+    
+    <button onclick="sendToWhatsApp()">موافق</button>
+  </div>
+</div>
+
+    <!-- المنتج الأول -->
+    <div class="product-card">
+      <img src="https://k.top4top.io/p_322725zsm0.jpeg" alt="المنتج الأول" class="product-image">
+      <h2 class="product-name">منتج 1</h2>
+      <p class="product-description">هذا هو وصف المنتج الأول. يحتوي على تفاصيل المنتج.</p>
+      <p class="product-price">السعر: 20$</p>
+      <div class="product-buttons">
+        <button onclick="downloadImage('https://k.top4top.io/p_322725zsm0.jpeg')">تحميل الصورة</button>
+
+<button onclick="openOrderModal()">بيع لزبون</button>
+
+      </div>
+    </div>
+
+    <!-- المنتج الثاني -->
+    <div class="product-card">
+      <img src="https://l.top4top.io/p_3227tslnb1.jpeg" alt="المنتج الثاني" class="product-image">
+      <h2 class="product-name">منتج 2</h2>
+      <p class="product-description">هذا هو وصف المنتج الثاني. يحتوي على تفاصيل المنتج.</p>
+      <p class="product-price">السعر: 30$</p>
+      <div class="product-buttons">
+        <button onclick="downloadImage('https://l.top4top.io/p_3227tslnb1.jpeg')">تحميل الصورة</button>
+    <button onclick="openOrderModal()">بيع لزبون</button>
+      </div>
+    </div>
+
+    <!-- المنتج الثالث -->
+    <div class="product-card">
+      <img src="https://a.top4top.io/p_3227dwmpf2.jpeg" alt="المنتج الثالث" class="product-image">
+      <h2 class="product-name">منتج 3</h2>
+      <p class="product-description">هذا هو وصف المنتج الثالث. يحتوي على تفاصيل المنتج.</p>
+      <p class="product-price">السعر: 25$</p>
+      <div class="product-buttons">
+        <button onclick="downloadImage('https://a.top4top.io/p_3227dwmpf2.jpeg')">تحميل الصورة</button>
+     <button onclick="openOrderModal()">بيع لزبون</button>
+      </div>
+    </div>
+
+    <!-- المنتج الرابع -->
+    <div class="product-card">
+      <img src="https://b.top4top.io/p_322766fxi3.jpeg" alt="المنتج الرابع" class="product-image">
+      <h2 class="product-name">منتج 4</h2>
+      <p class="product-description">هذا هو وصف المنتج الرابع. يحتوي على تفاصيل المنتج.</p>
+      <p class="product-price">السعر: 40$</p>
+      <div class="product-buttons">
+        <button onclick="downloadImage('https://b.top4top.io/p_322766fxi3.jpeg')">تحميل الصورة</button>
+      <button onclick="openOrderModal()">بيع لزبون</button>
+      </div>
+    </div>
+
+    <!-- المنتج الخامس -->
+    <div class="product-card">
+      <img src="https://c.top4top.io/p_3227rcb9g4.jpeg" alt="المنتج الخامس" class="product-image">
+      <h2 class="product-name">منتج 5</h2>
+      <p class="product-description">هذا هو وصف المنتج الخامس. يحتوي على تفاصيل المنتج.</p>
+      <p class="product-price">السعر: 35$</p>
+      <div class="product-buttons">
+        <button onclick="downloadImage('https://c.top4top.io/p_3227rcb9g4.jpeg')">تحميل الصورة</button>
+       <button onclick="openOrderModal()">بيع لزبون</button>
+      </div>
+    </div>
+
+    <!-- المنتج السادس -->
+    <div class="product-card">
+      <img src="https://d.top4top.io/p_32272vjrn5.png" alt="المنتج السادس" class="product-image">
+      <h2 class="product-name">منتج 6</h2>
+      <p class="product-description">هذا هو وصف المنتج السادس. يحتوي على تفاصيل المنتج.</p>
+      <p class="product-price">السعر: 50$</p>
+      <div class="product-buttons">
+        <button onclick="downloadImage('https://d.top4top.io/p_32272vjrn5.png')">تحميل الصورة</button>
+     <button onclick="openOrderModal()">بيع لزبون</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
