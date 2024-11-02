@@ -1,72 +1,11 @@
 * {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  background-color: #e6f7ff;
-  margin: 0;
-}
-
-.login-container {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  text-align: center;
-}
-
-.login-container h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-  font-size: 24px;
-}
-
-.login-container p {
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.login-container input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.login-container button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-container button:hover {
-  background-color: #0056b3;
-}
-
-.error {
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0; /* إزالة الهوامش الافتراضية */
     font-family: Arial, sans-serif; /* تعيين خط للصفحة */
+    background-color: #e6f7ff; /* لون الخلفية */
 }
 
 .header {
@@ -86,17 +25,11 @@ body {
 
 .products-container {
     max-width: 800px; /* عرض محتوى المنتجات */
-    margin: 70px auto 0; /* ترك مساحة للهيدر الثابت */
+    margin: 80px auto 0; /* ترك مساحة للهيدر الثابت (60px للهيدر + 20px للهوامش) */
     padding: 20px;
     text-align: center; /* توسيط النص داخل الحاوية */
 }
 
-.products-container h1 {
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-/* تنسيق بطاقة المنتج */
 .product-card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -104,6 +37,9 @@ body {
     margin: 10px;
     background-color: white; /* لون خلفية بطاقة المنتج */
     transition: transform 0.2s; /* تأثير التحول عند التمرير */
+    display: inline-block; /* عرض المنتجات ككتل عرضية */
+    width: calc(30% - 20px); /* ضبط العرض لكل بطاقة */
+    vertical-align: top; /* محاذاة بطاقات المنتجات */
 }
 
 .product-card:hover {
@@ -156,7 +92,7 @@ body {
 /* أنماط استجابة */
 @media (max-width: 600px) {
     .product-card {
-        margin: 5px; /* تقليل الهوامش في الأجهزة الصغيرة */
-        padding: 10px; /* تقليل padding في الأجهزة الصغيرة */
+        width: calc(100% - 20px); /* جعل كل بطاقة تأخذ عرض كامل */
+        margin: 10px 0; /* تعديل الهوامش */
     }
 }
