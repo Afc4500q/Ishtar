@@ -90,9 +90,3 @@ body {
 }
 
 /* أنماط استجابة */
-@media (max-width: 600px) {
-    .product-card {
-        width: calc(100% - 20px); /* جعل كل بطاقة تأخذ عرض كامل */
-        margin: 10px 0; /* تعديل الهوامش */
-    }
-}
