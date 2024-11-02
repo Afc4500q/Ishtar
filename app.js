@@ -6,7 +6,7 @@ const users = [
 
 
 
-function login() {
+function login1() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const errorDiv = document.getElementById("error");
