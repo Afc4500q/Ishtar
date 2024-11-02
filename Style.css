@@ -64,11 +64,26 @@ body {
   font-size: 14px;
 }
 
+..header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; /* اختر لونًا جذابًا */
+    color: white;
+    padding: 10px 20px;
+    width: 100%; /* جعل الهيدر يغطي كامل عرض الشاشة */
+    position: fixed; /* تثبيت الهيدر في أعلى الصفحة */
+    top: 0; /* محاذاة الهيدر للأعلى */
+    left: 0; /* محاذاة الهيدر لليسار */
+    z-index: 1000; /* التأكد من أن الهيدر فوق باقي المحتويات */
+}
+
 .products-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 80px auto 0; /* ترك مساحة للهيدر الثابت */
     padding: 20px;
     text-align: center;
+    margin-top: 60px; /* إضافة مسافة أعلى المحتوى */
 }
 
 .products-container h1 {
@@ -76,6 +91,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* بقية الأنماط تبقى كما هي */
 /* تنسيق الزر، الصورة، الوصف، ... */
 .product-card {
     border: 1px solid #ddd;
@@ -143,14 +159,7 @@ body {
     cursor: pointer;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4CAF50; /* اختر لونًا جذابًا */
-    color: white;
-    padding: 10px 20px;
-}
+
 
 .store-name {
     font-size: 24px;
