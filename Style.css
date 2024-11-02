@@ -15,17 +15,18 @@ body {
     background-color: #4CAF50; /* لون الهيدر */
     color: white;
     padding: 10px 20px;
-    width: 100%; /* يغطي كامل عرض الشاشة */
-    position: fixed; /* تثبيت الهيدر في أعلى الصفحة */
+    position: fixed; /* تثبيت الهيدر */
     top: 0; /* محاذاة الهيدر للأعلى */
     left: 0; /* محاذاة الهيدر لليسار */
-    z-index: 1000; /* تأكد من أن الهيدر فوق باقي المحتويات */
+    right: 0; /* محاذاة الهيدر لليمين */
+    z-index: 1000; /* التأكد من أن الهيدر فوق باقي المحتويات */
     height: 60px; /* تعيين ارتفاع ثابت للهيدر */
 }
 
 .products-container {
+    margin-top: 80px; /* ترك مساحة للهيدر (60px + 20px للهوامش) */
     max-width: 800px; /* عرض محتوى المنتجات */
-    margin: 80px auto 0; /* ترك مساحة للهيدر الثابت (60px للهيدر + 20px للهوامش) */
+    margin: 80px auto 0; /* ترك مساحة للهيدر */
     padding: 20px;
     text-align: center; /* توسيط النص داخل الحاوية */
 }
@@ -34,11 +35,11 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
-    margin: 10px;
+    margin: 10px; /* هامش بين بطاقات المنتجات */
     background-color: white; /* لون خلفية بطاقة المنتج */
     transition: transform 0.2s; /* تأثير التحول عند التمرير */
     display: inline-block; /* عرض المنتجات ككتل عرضية */
-    width: calc(30% - 20px); /* ضبط العرض لكل بطاقة */
+    width: calc(33.33% - 20px); /* ضبط العرض لكل بطاقة */
     vertical-align: top; /* محاذاة بطاقات المنتجات */
 }
 
@@ -88,7 +89,6 @@ body {
     text-decoration: none; /* إزالة التسطير */
     cursor: pointer; /* تغيير المؤشر عند التمرير */
 }
-
 
 /* أنماط استجابة */
 @media (max-width: 600px) {
