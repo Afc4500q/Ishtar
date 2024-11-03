@@ -1,106 +1,92 @@
-// بيانات المستخدمين بتنسيق JSON مخزنة ككائن JavaScript
+// بيانات تسجيل الدخول ورصيد المستخدمين
 const users = [
-  { "username": "hayder", "password": "123456",  "balance": 100.00 },
-  { "username": "ali", "password": "1234567",  "balance": 200.00}
+  { username: "user1", password: "password1", balance: 100 },
+  { username: "user2", password: "password2", balance: 200 },
 ];
 
+let loggedInUser = null;
 
+// منتجات
+const products = [
+  { name: "منتج 1", description: "وصف المنتج 1", price: 25, image: "https://via.placeholder.com/150" },
+  { name: "منتج 2", description: "وصف المنتج 2", price: 30, image: "https://via.placeholder.com/150" },
+  { name: "منتج 3", description: "وصف المنتج 3", price: 35, image: "https://via.placeholder.com/150" },
+  { name: "منتج 4", description: "وصف المنتج 4", price: 40, image: "https://via.placeholder.com/150" },
+  { name: "منتج 5", description: "وصف المنتج 5", price: 45, image: "https://via.placeholder.com/150" },
+  { name: "منتج 6", description: "وصف المنتج 6", price: 50, image: "https://via.placeholder.com/150" },
+];
 
-function login1() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const errorDiv = document.getElementById("error");
-
-  // إعادة تعيين رسالة الخطأ
-  errorDiv.textContent = "";
-
-  // التحقق من صحة بيانات المستخدم
-  const user = users.find(user => user.username === username && user.password === password);
-
-  if (user) {
-    alert("تم تسجيل الدخول بنجاح!");
-    window.location.href = "products.html"; // الانتقال إلى صفحة المنتجات
-  } else {
-    errorDiv.textContent = "اسم المستخدم أو كلمة المرور غير صحيحة";
-  }
-}
-
-// فتح النافذة المنبثقة
-function openOrderModal() {
-  document.getElementById("orderModal").style.display = "flex";
-}
-
-// إغلاق النافذة المنبثقة
-function closeOrderModal() {
-  document.getElementById("orderModal").style.display = "none";
-}
-
-function sendToWhatsApp() {
-  const clientName = document.getElementById("clientName").value;
-  const clientPhone = document.getElementById("clientPhone").value;
-  const clientProvince = document.getElementById("clientProvince").value;
-  const clientCity = document.getElementById("clientCity").value;
-  const clientArea = document.getElementById("clientArea").value;
-
-  // التأكد من أن جميع الحقول مليئة
-  if (!clientName || !clientPhone || !clientProvince || !clientCity || !clientArea) {
-    alert("يرجى ملء جميع الحقول.");
-    return;
-  }
-
-  // إعداد رسالة WhatsApp
-  const message = `اسم العميل: ${clientName}\nرقم الهاتف: ${clientPhone}\nالمحافظة: ${clientProvince}\nالمدينة: ${clientCity}\nالحي: ${clientArea}`;
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappNumber = "9647830860919"; // رقم الواتساب
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
-
-  // فتح رابط WhatsApp
-  window.open(whatsappUrl, '_blank');
-
-  // إغلاق النافذة المنبثقة
-  closeOrderModal();
-}
-
-// دالة لتحميل صورة المنتج
-function downloadImage(imagePath) {
-  const link = document.createElement('a');
-  link.href = imagePath;
-  link.download = 'product-image.jpg';
-  link.click();
-}
-
-function closeOrderModal() {
-  document.getElementById("orderModal").style.display = "none";
-}
-
-function openOrderModal() {
-  document.getElementById("orderModal").style.display = "block";
-}
-
+// دالة تسجيل الدخول
 function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  // تحقق من صحة بيانات تسجيل الدخول
   const user = users.find(u => u.username === username && u.password === password);
   if (user) {
-    localStorage.setItem("currentUser", username); // تخزين اسم المستخدم
-    loadUserBalance(); // تحميل الرصيد
+    loggedInUser = user;
+    document.getElementById("login").style.display = "none";
+    document.getElementById("products").style.display = "block";
+    loadProducts();
   } else {
-    alert("اسم المستخدم أو كلمة المرور غير صحيحة.");
+    alert("اسم المستخدم أو كلمة المرور غير صحيحة");
   }
 }
 
-// دالة لتحميل رصيد المستخدم
-function loadUserBalance() {
-  const currentUser = localStorage.getItem("currentUser");
-  const user = users.find(u => u.username === currentUser);
-  if (user) {
-    document.getElementById('balanceDisplay').innerHTML = `مبلغ الرصيد: ${user.balance} دينار`;
-  } else {
-    document.getElementById('balanceDisplay').innerHTML = 'المستخدم غير موجود.';
-  }
+// تحميل المنتجات
+function loadProducts() {
+  const productList = document.getElementById("productList");
+  productList.innerHTML = "";
+
+  products.forEach(product => {
+    const productElement = document.createElement("div");
+    productElement.className = "product";
+    productElement.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <p>السعر: $${product.price}</p>
+      <button onclick="showSalePopup()">بيع لزبون</button>
+      <button onclick="downloadImage('${product.image}')">تحميل الصورة</button>
+    `;
+    productList.appendChild(productElement);
+  });
 }
 
-// استدعاء دالة تحميل الرصيد عند تحميل الصفحة
-window.onload = loadUserBalance;
+// نافذة الرصيد
+function showBalance() {
+  document.getElementById("balanceAmount").innerText = `$${loggedInUser.balance}`;
+  document.getElementById("balancePopup").style.display = "block";
+}
+
+// تحميل الصورة
+function downloadImage(imageUrl) {
+  const link = document.createElement("a");
+  link.href = imageUrl;
+  link.download = "product_image.jpg";
+  link.click();
+}
+
+// نافذة البيع لزبون
+function showSalePopup() {
+  document.getElementById("salePopup").style.display = "block";
+}
+
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = "none";
+}
+
+// إرسال إلى الواتساب
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
+  const province = document.getElementById("customerProvince").value;
+  const city = document.getElementById("customerCity").value;
+  const neighborhood = document.getElementById("customerNeighborhood").value;
+
+  const message = `اسم العميل: ${name}%0Aرقم الهاتف: ${phone}%0Aالمحافظة: ${province}%0Aالمدينة: ${city}%0Aالحي: ${neighborhood}`;
+  const whatsappUrl = `https://wa.me/9647830860919?text=${message}`;
+  window.open(whatsappUrl, "_blank");
+  closePopup("salePopup");
+}
