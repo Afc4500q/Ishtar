@@ -11,6 +11,11 @@ body {
   background-color: #e6f7ff;
   margin: 0;
 }
+.main{
+
+  display: grid;
+  grid-template-rows: auto auto;
+}
 
 .login-container {
   width: 100%;
