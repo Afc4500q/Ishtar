@@ -39,9 +39,9 @@ body {
   text-align: center;
 }
 
-img{
-  Height: 200px;
-  width: 200px;
+.product img {
+  width: 100px; /* يمكنك تغيير القيمة حسب الحاجة */
+  height: 100px; /* للحفاظ على نسبة العرض إلى الارتفاع */
 }
 
 button {
