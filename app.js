@@ -1,7 +1,7 @@
 // بيانات تسجيل الدخول ورصيد المستخدمين
 const users = [
   { username: "user1", password: "password1", balance: 100 },
-  { username: "user2", password: "password2", balance: 200 },
+  { username: "noor", password: "123123", balance: 200 },
 ];
 
 let loggedInUser = null;
