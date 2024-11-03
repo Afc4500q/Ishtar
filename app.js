@@ -8,12 +8,12 @@ let loggedInUser = null;
 
 // منتجات
 const products = [
-  { name: "فان حراري منضدي", description: "وصف ", price: 65000, image: "https://c.top4top.io/p_3229o4v1m0.png" },
-  { name: "قلاية هوائية", description: "وصف ", price: 32000, image: "https://d.top4top.io/p_3229esdk71.png" },
-  { name: "محضرة قهوة تركية", description: "وصف", price: 22000, image: "https://e.top4top.io/p_322991yy62.png" },
-  { name: "جهاز تدليك 6 في 1", description: "وصف", price: 25000, image: "https://f.top4top.io/p_3229spq373.png" },
-  { name: "خلاط رياضي متعدد", description: "وصف", price:26000, image: "https://g.top4top.io/p_3229jwxpz4.png" },
-  { name: "كابسة صاج", description: "وصف", price: 27000 , image: "https://h.top4top.io/p_32292ddyn5.png" },
+  { name: " فان حراري منضدي", description: "وصف المنتج 1", price: 65000, image: "https://c.top4top.io/p_3229o4v1m0.png" },
+  { name: "قلاية هوائية", description: "وصف المنتج 2", price: 32000, image: "https://d.top4top.io/p_3229esdk71.png" },
+  { name: "محضرة قهوة تركية", description: "وصف المنتج 3", price: 22000, image: "https://e.top4top.io/p_322991yy62.png" },
+  { name: "جهاز تدليك كهربائي", description: "وصف المنتج 4", price: 25000, image: "https://f.top4top.io/p_3229spq373.png" },
+  { name: "خلاط رياضي متعدد", description: "وصف المنتج 5", price: 26000, image: "https://g.top4top.io/p_3229jwxpz4.png" },
+  { name: "كابسة صاج", description: "وصف المنتج 6", price: 27000, image: "https://h.top4top.io/p_32292ddyn5.png" },
 ];
 
 // دالة تسجيل الدخول
