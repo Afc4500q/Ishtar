@@ -8,12 +8,12 @@ let loggedInUser = null;
 
 // منتجات
 const products = [
-  { name: "فان حراري منضدي", description: "فان حراري منضدي منظر الحطب من ليبرونيك شكل مستطيل بقوة 2000 واط ", price: 65,000, image: "https://c.top4top.io/p_3229o4v1m0.png" },
-  { name: "قلاية هوائية", description: "قلاية 3.5 لتر من MIXDOR تستخدم لعمل الكيك, قلي الطعام, اللحوم والخضروات بدون زيت  ", price: 32,000, image: "https://d.top4top.io/p_3229esdk71.png" },
-  { name: "محضرة قهوة تركية", description: "محضرة قهوة تركية شاشة من ياني", price: 22,000, image: "https://e.top4top.io/p_322991yy62.png" },
-  { name: "جهاز تدليك 6 في 1", description: "جهاز تدليك 6 في 1 أداء عالي الجودة مع تصميم أنيق وسهل الاستخدام", price: 25,000, image: "https://f.top4top.io/p_3229spq373.png" },
-  { name: "خلاط رياضي متعدد", description: "خلاط رياضي متعدد تستخدم لعمل العصير, السموذي, البروتين والمكملات الغذائية", price:26,000, image: "https://g.top4top.io/p_3229jwxpz4.png" },
-  { name: "كابسة صاج", description: "كابسة صاج ماركة اوناكس", price: 27,000 , image: "https://h.top4top.io/p_32292ddyn5.png" },
+  { name: "فان حراري منضدي", description: "فان حراري منضدي منظر الحطب من ليبرونيك شكل مستطيل بقوة 2000 واط ", price: 65000, image: "https://c.top4top.io/p_3229o4v1m0.png" },
+  { name: "قلاية هوائية", description: "قلاية 3.5 لتر من MIXDOR تستخدم لعمل الكيك, قلي الطعام, اللحوم والخضروات بدون زيت  ", price: 32000, image: "https://d.top4top.io/p_3229esdk71.png" },
+  { name: "محضرة قهوة تركية", description: "محضرة قهوة تركية شاشة من ياني", price: 22000, image: "https://e.top4top.io/p_322991yy62.png" },
+  { name: "جهاز تدليك 6 في 1", description: "جهاز تدليك 6 في 1 أداء عالي الجودة مع تصميم أنيق وسهل الاستخدام", price: 25000, image: "https://f.top4top.io/p_3229spq373.png" },
+  { name: "خلاط رياضي متعدد", description: "خلاط رياضي متعدد تستخدم لعمل العصير, السموذي, البروتين والمكملات الغذائية", price:26000, image: "https://g.top4top.io/p_3229jwxpz4.png" },
+  { name: "كابسة صاج", description: "كابسة صاج ماركة اوناكس", price: 27000 , image: "https://h.top4top.io/p_32292ddyn5.png" },
 ];
 
 // دالة تسجيل الدخول
