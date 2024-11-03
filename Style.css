@@ -64,10 +64,6 @@ body {
   font-size: 14px;
 }
 
-body {
-    margin: 0; /* إزالة الهوامش الافتراضية */
-    font-family: Arial, sans-serif; /* تعيين خط للصفحة */
-}
 
 .header {
     display: flex;
