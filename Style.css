@@ -136,12 +136,13 @@ body {
     border-radius: 8px;
     width: 90%; /* عرض النافذة */
     max-width: 400px; /* الحد الأقصى للعرض */
-    text-align: right; /* توسيط النص داخل النافذة */
+   display: flex;
+  text-align: right; /* توسيط النص داخل النافذة */
 }
 
 /* أنماط لأزرار الإغلاق */
 .close {
-    color: #aaa; /* لون الزر */
+    color: black; /* لون الزر */
     float: right; /* محاذاة الزر إلى اليمين */
     font-size: 28px; /* حجم الزر */
     font-weight: bold; /* وزن الخط */
