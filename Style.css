@@ -131,7 +131,7 @@ body {
 }
 
 .modal-content {
-    background-color: #fff; /* لون خلفية المحتوى */
+    background-color: red; /* لون خلفية المحتوى */
     padding: 20px;
     border-radius: 8px;
     width: 90%; /* عرض النافذة */
