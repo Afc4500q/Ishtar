@@ -3,18 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تسجيل الدخول</title>
-  <link rel="stylesheet" href="Style.css">
+  <title>عشتار</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="login-container">
-    <h2>مرحبا بك من جديد!</h2>
-    <p>يرجى تسجيل الدخول للوصول إلى منتجاتنا</p>
-    <input type="text" id="username" placeholder="اسم المستخدم" required>
-    <input type="password" id="password" placeholder="كلمة المرور" required>
-    <button onclick="login1()">دخول</button>
-    <div id="error" class="error"></div>
+  <!-- شاشة تسجيل الدخول -->
+  <div id="login" class="login-container">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button onclick="login()">تسجيل الدخول</button>
+  </div>
+
+  <!-- عرض المنتجات -->
+  <div id="products" class="product-container" style="display: none;">
+    <header class="header">
+      <span>عشتار</span>
+      <span onclick="showBalance()" class="balance-icon">$</span>
+    </header>
+    
+    <div class="product-list" id="productList"></div>
+  </div>
+
+  <!-- نافذة الرصيد -->
+  <div id="balancePopup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup('balancePopup')">x</span>
+    <p>رصيد حسابك هو</p>
+    <p id="balanceAmount"></p>
+  </div>
+
+  <!-- نافذة بيع لزبون -->
+  <div id="salePopup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup('salePopup')">x</span>
+    <form onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="customerName" placeholder="اسم العميل الثلاثي" required>
+      <input type="text" id="customerPhone" placeholder="رقم الهاتف" required>
+      <input type="text" id="customerProvince" placeholder="المحافظة" required>
+      <input type="text" id="customerCity" placeholder="المدينة" required>
+      <input type="text" id="customerNeighborhood" placeholder="الحي" required>
+      <button type="submit">إرسال</button>
+      <button type="button" onclick="closePopup('salePopup')">إلغاء</button>
+    </form>
   </div>
 
   <script src="app.js"></script>
